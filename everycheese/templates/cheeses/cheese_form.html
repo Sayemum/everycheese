@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block title %}Add Cheese{% endblock %}
+{% block title %}{{ view.action|default:"Add" }} Cheese{% endblock title %}
 
 {% block content %}
 <h1>Add Cheese</h1>

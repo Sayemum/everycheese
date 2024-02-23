@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from .models import Cheese
 
@@ -13,3 +13,13 @@ class CheeseDetailView(DetailView):
 class CheeseCreateView(LoginRequiredMixin, CreateView):
     model = Cheese
     fields = ['name', 'description', 'firmness', 'country_of_origin']
+
+class CheeseUpdateView(LoginRequiredMixin, UpdateView):
+    model = Cheese
+    fields = [
+        'name',
+        'description',
+        'firmness',
+        'country_of_origin'
+    ]
+    action = "Update"
